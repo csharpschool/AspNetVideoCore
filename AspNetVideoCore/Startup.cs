@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using AspNetVideoCore.Services;
+using System;
 
 namespace AspNetVideoCore
 {
@@ -39,6 +40,7 @@ namespace AspNetVideoCore
 
             app.Run(async (context) =>
             {
+                throw new Exception("Fake Exception!");
                 await context.Response.WriteAsync(msg.GetMessage());
             });
         }
