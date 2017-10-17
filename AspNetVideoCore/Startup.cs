@@ -35,7 +35,7 @@ namespace AspNetVideoCore
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                //app.UseDeveloperExceptionPage();
             }
 
             app.Run(async (context) =>
