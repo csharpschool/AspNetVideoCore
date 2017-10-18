@@ -1,10 +1,14 @@
-﻿namespace AspNetVideoCore.Controllers
+﻿using AspNetVideoCore.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AspNetVideoCore.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
-        public string Index()
+        public ObjectResult Index()
         {
-            return "Hello, from the controller!";
+            var model = new Video { Id = 1, Title = "Shreck" };
+            return new ObjectResult(model);
         }
     }
 }
