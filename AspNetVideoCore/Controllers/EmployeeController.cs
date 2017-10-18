@@ -2,22 +2,23 @@
 
 namespace AspNetVideoCore.Controllers
 {
-    [Route("employee")]
+    [Route("[controller]")]
     public class EmployeeController
     {
-        [Route("name")]
+        [Route("[action]")]
         public string Name()
         {
             return "Jonas";
         }
 
-        [Route("country")]
+        [Route("[action]")]
         public string Country()
         {
             return "Sweden";
         }
 
         [Route("")]
+        [Route("[action]")]
         public string Index()
         {
             return "Hello from Employee";
