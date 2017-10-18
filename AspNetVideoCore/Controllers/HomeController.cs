@@ -5,10 +5,10 @@ namespace AspNetVideoCore.Controllers
 {
     public class HomeController : Controller
     {
-        public ObjectResult Index()
+        public ViewResult Index()
         {
             var model = new Video { Id = 1, Title = "Shreck" };
-            return new ObjectResult(model);
+            return View(model);
         }
     }
 }
