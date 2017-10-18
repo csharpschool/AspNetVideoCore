@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AspNetVideoCore.Entities.Video>
+﻿@model IEnumerable<AspNetVideoCore.ViewModels.VideoViewModel>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,6 +11,7 @@
             <tr>
                 <td>@video.Id</td>
                 <td>@video.Title</td>
+                <td>@video.Genre</td>
             </tr>
         }
     </table>

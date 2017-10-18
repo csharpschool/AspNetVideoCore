@@ -1,5 +1,9 @@
-﻿using AspNetVideoCore.Services;
+﻿using AspNetVideoCore.Models;
+using AspNetVideoCore.Services;
+using AspNetVideoCore.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 
 namespace AspNetVideoCore.Controllers
 {
@@ -13,7 +17,13 @@ namespace AspNetVideoCore.Controllers
 
         public ViewResult Index()
         {
-            var model = _videos.GetAll();
+            var model = _videos.GetAll().Select(video =>
+                new VideoViewModel
+                {
+                    Id = video.Id,
+                    Title = video.Title,
+                    Genre = Enum.GetName(typeof(Genres), video.GenreId)
+                });
 
             return View(model);
         }
