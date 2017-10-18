@@ -1,4 +1,4 @@
-﻿using AspNetVideoCore.Models;
+﻿using AspNetVideoCore.Entities;
 using System;
 using System.Collections.Generic;
 

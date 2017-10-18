@@ -1,4 +1,4 @@
-﻿using AspNetVideoCore.Models;
+﻿using AspNetVideoCore.Entities;
 using System.Collections.Generic;
 
 namespace AspNetVideoCore.Services

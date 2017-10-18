@@ -1,4 +1,4 @@
-﻿namespace AspNetVideoCore.Models
+﻿namespace AspNetVideoCore.Entities
 {
     public class Video
     {
