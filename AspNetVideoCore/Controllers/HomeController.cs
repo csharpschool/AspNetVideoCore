@@ -31,7 +31,16 @@ namespace AspNetVideoCore.Controllers
         public IActionResult Details(int id)
         {
             var model = _videos.Get(id);
-            return new ObjectResult(model);
+
+            if (model == null) return RedirectToAction("Index");
+
+            return View(new VideoViewModel
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    Genre = Enum.GetName(typeof(Genres), model.GenreId)
+                }
+            );
         }
     }
 }
