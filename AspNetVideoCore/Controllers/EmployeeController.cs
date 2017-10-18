@@ -4,11 +4,11 @@ namespace AspNetVideoCore.Controllers
 {
     //[Route("company/[controller]")]
     [Route("company/[controller]/[action]")]
-    public class EmployeeController
+    public class EmployeeController : Controller
     {
-        public string Name()
+        public ContentResult Name()
         {
-            return "Jonas";
+            return Content("Jonas");
         }
 
         public string Country()
