@@ -48,5 +48,10 @@ namespace AspNetVideoCore.Controllers
             return View();
         }
 
+        public IActionResult Create(VideoEditViewModel model)
+        {
+            return View();
+        }
+
     }
 }
