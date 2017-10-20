@@ -1,0 +1,25 @@
+﻿@using AspNetVideoCore.Models
+@model AspNetVideoCore.Entities.Video
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Create Video</h2>
+<form asp-action="Create" method="post">
+    <table>
+        <tr>
+            <td><label asp-for="Title"></label></td>
+            <td><input asp-for="Title" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Genre"></label></td>
+            <td>
+                <select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genres>()"></select>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Create" />
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

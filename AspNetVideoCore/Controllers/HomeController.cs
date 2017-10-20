@@ -42,5 +42,11 @@ namespace AspNetVideoCore.Controllers
             }
             );
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
     }
 }
