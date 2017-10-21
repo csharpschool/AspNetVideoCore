@@ -38,7 +38,7 @@ namespace AspNetVideoCore
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IMessageService, ConfigurationMessageService>();
-            services.AddSingleton<IVideoData, MockVideoData>();
+            services.AddScoped<IVideoData, SqlVideoData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
