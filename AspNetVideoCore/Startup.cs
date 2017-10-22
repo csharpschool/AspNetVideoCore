@@ -54,7 +54,7 @@ namespace AspNetVideoCore
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseIdentity();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
