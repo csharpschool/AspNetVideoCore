@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    // Signed in user
+    <div>@User.Identity.Name</div>
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Logout" />
+    </form>
+}
+else
+{
+    // Anonymous user
+    <a asp-controller="Account" asp-action="Login">Login</a>
+    <a asp-controller="Account" asp-action="Register">Register</a>
+}
+
