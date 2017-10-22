@@ -62,6 +62,7 @@ namespace AspNetVideoCore.Controllers
                 };
 
                 _videos.Add(video);
+                _videos.Commit();
 
                 return RedirectToAction("Details", new { id = video.Id });
             }
@@ -93,6 +94,5 @@ namespace AspNetVideoCore.Controllers
 
             return RedirectToAction("Details", new { id = video.Id });
         }
-
     }
 }
