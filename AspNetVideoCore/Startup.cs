@@ -8,6 +8,8 @@ using AspNetVideoCore.Services;
 using System;
 using AspNetVideoCore.Data;
 using Microsoft.EntityFrameworkCore;
+using AspNetVideoCore.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspNetVideoCore
 {
@@ -35,6 +37,9 @@ namespace AspNetVideoCore
             var conn = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<VideoDbContext>(options => options.UseSqlServer(conn));
 
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<VideoDbContext>();
+
             services.AddMvc();
             services.AddSingleton(provider => Configuration);
             services.AddSingleton<IMessageService, ConfigurationMessageService>();
@@ -48,6 +53,8 @@ namespace AspNetVideoCore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {
