@@ -2,6 +2,11 @@
 @model AspNetVideoCore.Entities.Video
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <h2>Create Video</h2>
 <form asp-action="Create" method="post">
     <div asp-validation-summary="All"></div>

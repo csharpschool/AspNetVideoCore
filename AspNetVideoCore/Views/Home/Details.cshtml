@@ -1,13 +1,11 @@
 ﻿@model AspNetVideoCore.ViewModels.VideoViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Video</title>
-</head>
-<body>
-    <div>Id: @Model.Id</div>
-    <div>Title: @Model.Title</div>
-    <div>Genre: @Model.Genre</div>
-    @Html.ActionLink("Home", "Index")
-</body>
-</html>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>Id: @Model.Id</div>
+<div>Title: @Model.Title</div>
+<div>Genre: @Model.Genre</div>
+@Html.ActionLink("Home", "Index")
