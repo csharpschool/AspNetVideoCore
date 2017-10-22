@@ -1,0 +1,28 @@
+﻿@model Video
+
+@{
+    ViewBag.Title = $"Edit {Model.Title}";
+}
+
+<h2>@ViewBag.Title</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All"></div>
+    <table>
+        <tr>
+            <td><label asp-for="Title"></label></td>
+            <td><input asp-for="Title" /></td>
+            <td><span asp-validation-for="Title"></span></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Genre"></label></td>
+            <td><select asp-for="Genre" asp-items="Html.GetEnumSelectList<Genres>()"></select></td>
+            <td><span asp-validation-for="Genre"></span></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Edit" />
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

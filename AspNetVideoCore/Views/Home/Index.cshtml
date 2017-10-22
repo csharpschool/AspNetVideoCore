@@ -8,9 +8,10 @@
     @foreach (var video in Model)
     {
         <tr>
-            <td><a asp-action="Details" asp-route-id="@video.Id">Details</a></td>
             <td>@video.Title</td>
             <td>@video.Genre</td>
+            <td><a asp-action="Details" asp-route-id="@video.Id">Details</a></td>
+            <td><a asp-action="Edit" asp-route-id="@video.Id">Edit</a></td>
         </tr>
     }
 </table>
