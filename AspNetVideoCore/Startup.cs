@@ -55,6 +55,7 @@ namespace AspNetVideoCore
             }
 
             app.UseAuthentication();
+            app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
@@ -64,10 +65,10 @@ namespace AspNetVideoCore
             });
 
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync(msg.GetMessage());
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync(msg.GetMessage());
+            //});
         }
     }
 }
